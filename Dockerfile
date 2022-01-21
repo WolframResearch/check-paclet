@@ -5,7 +5,9 @@ FROM wolframresearch/wolframengine:13.0.0
 COPY entrypoint.sh /entrypoint.sh
 
 # Set executable permission for the entry point
-RUN chmod +x entrypoint.sh
+USER root
+RUN chmod +x /entrypoint.sh
+USER wolframengine
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
