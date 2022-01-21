@@ -16,4 +16,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.target inputs.definition-notebook }}
+    - ${{ inputs.target }}
