@@ -7,4 +7,4 @@ export CHECK_PACLET_TARGET=${1};
 
 wolframscript -code 'PacletInstall["https://wolfr.am/11FhS453R"];PacletInstall["https://wolfr.am/11FhS4xyd"];'
 
-wolframscript -code "PacletResource`CICD`CheckPaclet[]"
+wolframscript -code 'PacletResource`CICD`CheckPaclet[]'
