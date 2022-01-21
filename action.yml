@@ -1,5 +1,8 @@
 name: 'Check Paclet'
 description: 'Check a paclet using its definition notebook file'
+branding:
+  icon: 'check-square'  
+  color: 'orange'
 inputs:
   target:  # id of input
     description: 'The target'
