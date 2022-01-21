@@ -1,0 +1,19 @@
+name: 'Check Paclet'
+description: 'Check a paclet using its definition notebook file'
+inputs:
+  target:  # id of input
+    description: 'The target'
+    required: false
+    default: 'Submit'
+  definition-notebook:
+    description: 'Path to the definition notebook'
+    required: false
+    default: 'None'
+#outputs:
+  # output-id: # id of output
+  #  description: 'The output description'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.target inputs.definition-notebook }}
