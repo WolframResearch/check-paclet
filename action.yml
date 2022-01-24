@@ -8,15 +8,10 @@ inputs:
     description: 'The target'
     required: false
     default: 'Submit'
-  definition-notebook:
+  definition_notebook:
     description: 'Path to the definition notebook'
     required: false
     default: 'None'
-#outputs:
-  # output-id: # id of output
-  #  description: 'The output description'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.target }}
