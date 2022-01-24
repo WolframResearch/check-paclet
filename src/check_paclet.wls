@@ -1,9 +1,11 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-Print[ "Checking paclet..." ];
+print[ a___ ] := WriteString[ "stdout", a, "\n" ];
 
-Print[ "INPUT_TARGET="       , Environment[ "INPUT_TARGET"        ] ];
-Print[ "DEFINITION_NOTEBOOK=", Environment[ "DEFINITION_NOTEBOOK" ] ];
+print[ "Checking paclet..." ];
+
+print[ "INPUT_TARGET="       , Environment[ "INPUT_TARGET"        ] ];
+print[ "DEFINITION_NOTEBOOK=", Environment[ "DEFINITION_NOTEBOOK" ] ];
 
 PacletResource`CICD`CheckPaclet[ ]
