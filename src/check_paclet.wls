@@ -19,9 +19,13 @@ print[ "Checking paclet..." ];
 
 target = getInput[ "TARGET" ];
 defNB  = getInput[ "DEFINITION_NOTEBOOK" ];
+If[ ! FileExistsQ @ ExpandFileName @ defNB,
+    print[ "::error::Definition notebook not found: ", defNB ];
+    Exit[ 1 ]
+];
 
 Block[ { Print = print },
-    Wolfram`PacletCICD`CheckPaclet[ "Target" -> target ]
+    Wolfram`PacletCICD`CheckPaclet[ File @ defNB, "Target" -> target ]
 ]
 
 (* :!CodeAnalysis::EndBlock:: *)
