@@ -12,6 +12,10 @@ inputs:
     description: 'Path to the definition notebook'
     required: false
     default: './DefinitionNotebook.nb'
+  debug:
+    description: 'Whether to enable additional debug output'
+    required: false
+    default: 'false'
   paclet_cicd_version:
     description: 'Version of PacletCICD to use'
     required: false

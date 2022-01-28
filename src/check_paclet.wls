@@ -28,9 +28,22 @@ If[ ! FileExistsQ @ ExpandFileName @ defNB,
     Exit[ 1 ]
 ];
 
-result = Block[ { Print = print },
-    Wolfram`PacletCICD`CheckPaclet[ File @ defNB, "Target" -> target ]
+debug = Interpreter[ "Boolean" ][ getInput[ "DEBUG" ] ];
+If[ ! BooleanQ @ debug,
+    print[ "::error::Expected a boolean value for input 'debug' instead of ",
+           getInput[ "DEBUG" ]
+    ];
+    Exit[ 1 ]
 ];
+
+result =
+    Block[ { Print = print },
+        Wolfram`PacletCICD`CheckPaclet[
+            File @ defNB,
+            "Target" -> target,
+            "Debug" -> debug
+        ]
+    ];
 
 print @ result;
 
