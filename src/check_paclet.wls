@@ -28,7 +28,7 @@ If[ ! FileExistsQ @ ExpandFileName @ defNB,
     Exit[ 1 ]
 ];
 
-Block[ { Print = print },
+EchoEvaluation @ Block[ { Print = print },
     Wolfram`PacletCICD`CheckPaclet[ File @ defNB, "Target" -> target ]
 ]
 
