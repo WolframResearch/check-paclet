@@ -4,6 +4,10 @@
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
+print[ a___ ] := WriteString[ "stdout", a, "\n" ];
+
+print[ "Loading Wolfram`PacletCICD` from ", FindFile[ "Wolfram`PacletCICD`" ] ];
+
 Needs[ "Wolfram`PacletCICD`" ];
 
 print[ a___ ] := WriteString[ "stdout", a, "\n" ];
