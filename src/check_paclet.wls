@@ -40,8 +40,9 @@ result =
     Block[ { Print = print },
         Wolfram`PacletCICD`CheckPaclet[
             File @ defNB,
-            "Target" -> target,
-            "Debug" -> debug
+            "Target"      -> target,
+            "Debug"       -> debug,
+            "ConsoleType" -> "GitHub"
         ]
     ];
 
