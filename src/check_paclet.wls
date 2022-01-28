@@ -28,8 +28,15 @@ If[ ! FileExistsQ @ ExpandFileName @ defNB,
     Exit[ 1 ]
 ];
 
-EchoEvaluation @ Block[ { Print = print },
+result = Block[ { Print = print },
     Wolfram`PacletCICD`CheckPaclet[ File @ defNB, "Target" -> target ]
-]
+];
+
+print @ result;
+
+If[ MatchQ[ result, _Wolfram`PacletCICD`CheckPaclet ],
+    print[ "::error::Wolfram`PacletCICD`CheckPaclet not defined" ];
+    Exit[ 1 ]
+];
 
 (* :!CodeAnalysis::EndBlock:: *)
