@@ -36,15 +36,14 @@ If[ ! BooleanQ @ debug,
     Exit[ 1 ]
 ];
 
-result =
-    Block[ { Print = print },
-        Wolfram`PacletCICD`CheckPaclet[
-            File @ defNB,
-            "Target"      -> target,
-            "Debug"       -> debug,
-            "ConsoleType" -> "GitHub"
-        ]
-    ];
+result = Block[ { Print = print },
+    Wolfram`PacletCICD`CheckPaclet[
+        File @ defNB,
+        "Target"      -> target,
+        "Debug"       -> debug,
+        "ConsoleType" -> "GitHub"
+    ]
+];
 
 print @ result;
 
